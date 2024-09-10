@@ -34,4 +34,11 @@
             app:argType="string" /> <!-- Using _id from TravelPlace -->
     </fragment>
 
+    <fragment
+        android:id="@+id/nav_stored_travel_places"
+        android:name="com.example.travelbucket.ui.home.StoredTravelPlacesFragment"
+        android:label="Stored Travel Places"
+        tools:layout="@layout/fragment_stored_travel_places" />
+
+
 </navigation>

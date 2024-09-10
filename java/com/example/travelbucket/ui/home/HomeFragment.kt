@@ -44,21 +44,9 @@ class HomeFragment : Fragment() {
 
                     val travelPlaces = response.body() ?: emptyList()
 
-                    adapter = TravelPlaceAdapter(travelPlaces) { travelPlace ->
-                        // Navigate to TravelPlaceDetailsFragment with SafeArgs
-                        Log.d("HomeFragment", "Navigating to details with ID: ${travelPlace}")
+                    // Update adapter's list
+                    adapter.submitList(travelPlaces)
 
-                        if (travelPlace._id != null) {
-                            val action = HomeFragmentDirections.actionNavHomeToNavTravelPlaceDetails(travelPlace._id)
-                            Log.d("HomeFragment", "The city ${travelPlace.city} is clicked")
-                            findNavController().navigate(action)
-
-                        } else {
-                            // Handle error: ID is null
-                        }
-
-                    }
-                    binding.recyclerView.adapter = adapter
                     binding.progressBar.visibility = View.GONE
                     binding.recyclerView.visibility = View.VISIBLE
                 }
@@ -71,8 +59,16 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
+        adapter = TravelPlaceAdapter { travelPlace ->
+            // Navigate to TravelPlaceDetailsFragment with SafeArgs
+            Log.d("HomeFragment", "Navigating to details with ID: ${travelPlace._id}")
+            if (travelPlace._id != null) {
+                val action = HomeFragmentDirections.actionNavHomeToNavTravelPlaceDetails(travelPlace._id)
+                findNavController().navigate(action)
+            }
+        }
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.setHasFixedSize(true)
+        binding.recyclerView.adapter = adapter
     }
 }
-
