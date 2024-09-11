@@ -11,7 +11,7 @@ data class TravelPlace(
     @PrimaryKey
     val _id: String,
     val city: String,
-    val imageUrls: List<String>, // Requires TypeConverter
+    val imageUrls: List<String>, // URLs (if needed)
     val description: String,
     val estimatedCost: Int,
     val bestSeasonToTravel: String

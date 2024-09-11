@@ -1,5 +1,6 @@
 package com.example.travelbucket.data
 
+import android.util.Base64
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -15,4 +16,6 @@ class Converters {
     fun fromList(list: List<String>): String {
         return Gson().toJson(list)
     }
+
+
 }

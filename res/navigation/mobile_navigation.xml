@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.travelbucket.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="Popular Places"
         tools:layout="@layout/fragment_home"
 
         >
@@ -18,11 +18,7 @@
     </fragment>
 
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.travelbucket.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+
 
     <fragment
         android:id="@+id/nav_travel_place_details"
@@ -33,5 +29,12 @@
             android:name="travelPlaceId"
             app:argType="string" /> <!-- Using _id from TravelPlace -->
     </fragment>
+
+    <fragment
+        android:id="@+id/nav_stored_travel_places"
+        android:name="com.example.travelbucket.ui.home.StoredTravelPlacesFragment"
+        android:label="Saved Travel Places"
+        tools:layout="@layout/fragment_stored_travel_places" />
+
 
 </navigation>

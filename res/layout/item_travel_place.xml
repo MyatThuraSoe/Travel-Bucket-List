@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#A5A5A5"
+        android:background="#DDE2FB"
         >
 
         <ImageView
@@ -30,7 +30,8 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#110023"
             app:layout_constraintTop_toBottomOf="@id/image_place"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
